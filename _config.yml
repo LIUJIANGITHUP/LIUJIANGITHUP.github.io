@@ -9,7 +9,7 @@ baseurl: "/"
 description: 浏览器不满意你写的代码，并向你抛了400,500!
 meta_description: 富强、民主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善
 motto: 平安熬夜险，为你的加班保驾护航.
-banner: 学而不思则罔，思而不学则殆。
+banner: 富强、民主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
