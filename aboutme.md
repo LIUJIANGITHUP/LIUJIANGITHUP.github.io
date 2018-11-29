@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ¹ØÓÚÎÒ
+title: å…³äºæˆ‘
 permalink: /aboutme/
 ---
 
