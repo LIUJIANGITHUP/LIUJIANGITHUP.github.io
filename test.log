@@ -1,0 +1,16 @@
+
+2018-11-02 11:41:09,729INFO [cn.entrance.CountNum.main(CountNum.java:255)] java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+2018-11-02 11:45:00,010INFO [cn.entrance.CountNum.main(CountNum.java:255)] java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+2018-11-02 11:46:21,221INFO [cn.entrance.CountNum.main(CountNum.java:255)] java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+2018-11-02 11:50:37,369INFO [cn.entrance.CountNum.main(CountNum.java:255)] java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+2018-11-02 12:49:26,767INFO [cn.entrance.CountNum.main(CountNum.java:255)] java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+2018-11-02 13:18:32,635INFO [cn.entrance.CountNum.main(CountNum.java:262)] D:\workorder.xls (系统找不到指定的文件。)
+
+2018-11-02 13:36:20,907INFO [cn.entrance.CountNum.main(CountNum.java:261)] Can't open the specified file: 'D:\Workspaces\eomaqpc19\CountNumber\data.xlsx'
+
+2018-11-02 13:54:45,287INFO [cn.entrance.CountNum.main(CountNum.java:261)] D:\output.xls (另一个程序正在使用此文件，进程无法访问。)
