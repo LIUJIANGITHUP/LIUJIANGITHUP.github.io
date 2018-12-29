@@ -267,7 +267,7 @@ tag: 算法
 			//对123456加密
 			System.out.println(hashpw("123456", salt));
 			//是否匹配
-	    System.out.println(matches("123456", "$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa"));
+ System.out.println(matches("123456", "$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa"));
 		}
 		
 		private static void init_key() {
