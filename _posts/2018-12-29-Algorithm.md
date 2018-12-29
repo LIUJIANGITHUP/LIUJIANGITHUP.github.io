@@ -48,9 +48,10 @@ tag: 算法
 		rs.append("$");
 		encode_base64(rnd, rnd.length, rs);
 		return rs.toString();
-	   }```
+	   }
+	 ```
 * BCrypt算法源码，可直接用：
-	```package bcrypt;
+     ```package bcrypt;
 	import java.io.ByteArrayOutputStream;
 	import java.io.UnsupportedEncodingException;
 	import java.security.SecureRandom;
