@@ -10,15 +10,16 @@ tag: 算法
 {:toc}
 
 
-摘要：
+# 摘要：
 用户表的密码一般都不是使用明文，使用明文坏处可以参考之前CSDN数据库被黑导致用户密码泄露造成的影响。虽然使用明文也有一定的方便之处(毕竟现在的加密都是单向的，比如客户打电话问密码、老大或者上级问密码)，但是我们完全可以根据用户提供的其他信息(比如密保让客户自己输入密码进行更改而不是直接告诉用户密码)，无论怎么样明文存储密码的坏处一定大于好处。下面将介绍使用Spring Security时候遇到的默认密码加密算法BCrypt：
 
-正文：BCrypt算法将salt随机并混入最终加密后的密码，验证时也无需单独提供之前的salt，从而无需单独处理salt问题。
+# 正文：
+   BCrypt算法将salt随机并混入最终加密后的密码，验证时也无需单独提供之前的salt，从而无需单独处理salt问题。
       
-	 一、salt随机部分代码：
-	    根据SecureRandom对象与gensalt()方法产生随机值
+	1. salt随机部分代码：
+	   ```根据SecureRandom对象与gensalt()方法产生随机值
         String salt = gensalt(xx, new SecureRandom());
-        String BCpwd = hashpw("123456", salt);
+        String BCpwd = hashpw("123456", salt);```
       
 	 二、用法：
 	     BCpwd是加密后的密文
