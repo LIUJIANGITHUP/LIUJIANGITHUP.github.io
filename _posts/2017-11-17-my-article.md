@@ -16,15 +16,15 @@ tag: 部署
   1. CTRL + SHIFT + A --> 查找make project automatically --> 选中 
   2. CTRL + SHIFT + A --> 查找Registry --> 找到并勾选compiler.automake.allow.when.app.running 
   3. 在pom.xml中添加一下依赖，如下：
-  ``` 
+     ``` 
      <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-devtools</artifactId>
-         <optional>true</optional>
+         <optional>true</optional>注：必须设置为true
          <scope>runtime</scope>
      </dependency>
-    #注意：optional必须设置为true
-  ```
+     ```
+  
   4. idea开启自动编译（File-setting-Compiler）
      File-setting-Compiler-Build Project automatically
 
