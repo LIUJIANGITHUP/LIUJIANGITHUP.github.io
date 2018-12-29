@@ -15,20 +15,21 @@ tag: 算法
 
 正文：BCrypt算法将salt随机并混入最终加密后的密码，验证时也无需单独提供之前的salt，从而无需单独处理salt问题。
       
-	  salt随机部分代码：
+	 一、salt随机部分代码：
 	    根据SecureRandom对象与gensalt()方法产生随机值
         String salt = gensalt(xx, new SecureRandom());
         String BCpwd = hashpw("123456", salt);
       
-	  用法：
+	 二、用法：
 	     BCpwd是加密后的密文
          String BCpwd = BCrypt.hashpw(password, BCrypt.gensalt());
 		 
-      加密后的格式：
+     三、加密后的格式：
 	     $2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa
-		 格式解释：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；而后的前22位是salt值；再然后的字符串就是密码的密文了。
+		 格式解释：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；
+		           而后的前22位是salt值；再然后的字符串就是密码的密文了。
 	  
-	  代码的格式拼接可以查看gensalt()方法源码：
+	 四、代码的格式拼接可以查看gensalt()方法源码：
 	  public static String gensalt(int log_rounds, SecureRandom random) {
 		if (log_rounds < 4 || log_rounds > 31) {
 			throw new IllegalArgumentException("Bad number of rounds");
@@ -48,7 +49,7 @@ tag: 算法
 		return rs.toString();
 	   }
 	   
-	BCrypt算法源码，可直接用：
+	五、BCrypt算法源码，可直接用：
 	package bcrypt;
 	import java.io.ByteArrayOutputStream;
 	import java.io.UnsupportedEncodingException;
@@ -250,23 +251,23 @@ tag: 算法
 				'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 		// Table for Base64 decoding
 		static private final byte index_64[] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-				-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-				-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 1, 54, 55,
-				56, 57, 58, 59, 60, 61, 62, 63, -1, -1, -1, -1, -1, -1, -1, 2, 3, 4, 5, 6, 7,
-				8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
-				-1, -1, -1, -1, -1, -1, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-				41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, -1, -1, -1, -1, -1 };
+			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 1, 54, 55,
+			56, 57, 58, 59, 60, 61, 62, 63, -1, -1, -1, -1, -1, -1, -1, 2, 3, 4, 5, 6, 7,
+			8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+			-1, -1, -1, -1, -1, -1, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+			41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, -1, -1, -1, -1, -1 };
 		// Expanded Blowfish key
 		private static int P[];
 		private static int S[];
-		
+		****主函数
 		public static void main(String[] args) {
 			//10是不确定的  此处只是个例子
 			String salt = gensalt(10, new SecureRandom());
 			//对123456加密
 			System.out.println(hashpw("123456", salt));
 			//是否匹配
-			System.out.println(matches("123456", "$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa"));
+	    System.out.println(matches("123456", "$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa"));
 		}
 		
 		private static void init_key() {
