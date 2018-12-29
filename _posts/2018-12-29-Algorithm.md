@@ -15,11 +15,12 @@ tag: 算法
 
 # 正文：
    BCrypt算法将salt随机并混入最终加密后的密码，验证时也无需单独提供之前的salt，从而无需单独处理salt问题。
-      
-	1. salt随机部分代码：
-	   ```根据SecureRandom对象与gensalt()方法产生随机值
-        String salt = gensalt(xx, new SecureRandom());
-        String BCpwd = hashpw("123456", salt);```
+* salt随机部分代码：
+   ```  
+   根据SecureRandom对象与gensalt()方法产生随机值
+   String salt = gensalt(xx, new SecureRandom());
+   String BCpwd = hashpw("123456", salt);
+   ```
       
 	 二、用法：
 	     BCpwd是加密后的密文
