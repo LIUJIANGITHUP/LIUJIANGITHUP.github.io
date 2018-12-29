@@ -16,6 +16,7 @@ tag: 部署
   1. CTRL + SHIFT + A --> 查找make project automatically --> 选中 
   2. CTRL + SHIFT + A --> 查找Registry --> 找到并勾选compiler.automake.allow.when.app.running 
   3. 在pom.xml中添加一下依赖，如下
+  
     ```
     <dependency>
          <groupId>org.springframework.boot</groupId>
