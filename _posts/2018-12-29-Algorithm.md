@@ -28,6 +28,7 @@ tag: 算法
   ```	 
 * 加密后的格式：
   ```$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa```
+  
   格式解释：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；而后的前22位是salt值；再然后的字符串就是密码的密文了。
 * 代码的格式拼接可以查看gensalt()方法源码：
 	 ``` public static String gensalt(int log_rounds, SecureRandom random) {
@@ -47,8 +48,7 @@ tag: 算法
 		rs.append("$");
 		encode_base64(rnd, rnd.length, rs);
 		return rs.toString();
-	   }
-	   ```
+	   }```
 * BCrypt算法源码，可直接用：
 	```package bcrypt;
 	import java.io.ByteArrayOutputStream;
