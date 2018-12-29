@@ -21,18 +21,16 @@ tag: 算法
    String salt = gensalt(xx, new SecureRandom());
    String BCpwd = hashpw("123456", salt);
    ```
-      
-	 二、用法：
-	     BCpwd是加密后的密文
-         String BCpwd = BCrypt.hashpw(password, BCrypt.gensalt());
-		 
-     三、加密后的格式：
-	     $2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa
-		 格式解释：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；
-		           而后的前22位是salt值；再然后的字符串就是密码的密文了。
-	  
-	 四、代码的格式拼接可以查看gensalt()方法源码：
-	  public static String gensalt(int log_rounds, SecureRandom random) {
+* 用法：
+  ```
+  BCpwd是加密后的密文
+  String BCpwd = BCrypt.hashpw(password, BCrypt.gensalt());
+  ```	 
+* 加密后的格式：
+  ```$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa```
+  格式解释：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；而后的前22位是salt值；再然后的字符串就是密码的密文了。
+* 代码的格式拼接可以查看gensalt()方法源码：
+	 ``` public static String gensalt(int log_rounds, SecureRandom random) {
 		if (log_rounds < 4 || log_rounds > 31) {
 			throw new IllegalArgumentException("Bad number of rounds");
 		}
@@ -50,9 +48,9 @@ tag: 算法
 		encode_base64(rnd, rnd.length, rs);
 		return rs.toString();
 	   }
-	   
-	五、BCrypt算法源码，可直接用：
-	package bcrypt;
+	   ```
+* BCrypt算法源码，可直接用：
+	```package bcrypt;
 	import java.io.ByteArrayOutputStream;
 	import java.io.UnsupportedEncodingException;
 	import java.security.SecureRandom;
@@ -269,7 +267,7 @@ tag: 算法
 			//对123456加密
 			System.out.println(hashpw("123456", salt));
 			//是否匹配
- System.out.println(matches("123456", "$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa"));
+                        System.out.println(matches("123456", "$2a$10$/bTVvqqlH9UiE0ZJZ7N2Me3RIgUCdgMheyTgV0B4cMCSokPa.6oCa"));
 		}
 		
 		private static void init_key() {
@@ -595,6 +593,6 @@ tag: 算法
 			return ret == 0;
 		}
 	}
-	
+	```
 
 
